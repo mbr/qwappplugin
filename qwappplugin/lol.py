@@ -15,9 +15,8 @@ def load_db(plugin, app):
 	app.lol_db = leagueoflegends.ItemGraph.from_item_file(app.config['PLUGIN_LOL_DBFILE'])
 
 
-@plugin.on_signal('special-loaded')
-@plugin.on_signal('page-loaded')
-def process(app, page):
+@plugin.on_signal('page-preprocess')
+def process(page):
 	page.extract_blocks(ITEM_BUILD_BLOCK_NAME)
 	for id, block in page.blocks[ITEM_BUILD_BLOCK_NAME]:
 		try:
