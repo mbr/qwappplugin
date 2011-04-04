@@ -3,7 +3,7 @@
 
 from flask import current_app
 
-from qwapp.plugin import Plugin, make_block_expression
+from qwapp.plugin import Plugin
 import leagueoflegends
 
 plugin = Plugin('League of Legends plugin', author = 'Marc Brinkmann', description = 'Allows the calculation of gold and item build orders', version = (0,1))
